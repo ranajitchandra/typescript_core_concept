@@ -12,27 +12,32 @@ function display(): void {
     console.log("Hello I am display function");
 }
 
+
+// ------------------------
 // union type
 
 let multiTyoe: number | string;
 multiTyoe = 20;
 multiTyoe = "Twenty";
 
-function combine( userId: number | string ){
+function combine(userId: number | string) {
     console.log(`User Id is: ${userId}`);
 }
 
+
+// ------------------------
 // array type
 
 let numberArray: number[];
 let stringArray: string[];
-let multiTyoeArray: ( number | string)[];
+let multiTyoeArray: (number | string)[];
 
 multiTyoeArray = [1, "Two", 3, "Four"];
 stringArray = ["Max", "Anna", "Chris"].sort();
-numberArray = [1,2,3,4,5];
+numberArray = [1, 2, 3, 4, 5];
 
 
+// ------------------------
 // tuple type
 
 let user: [number, string];
@@ -40,7 +45,7 @@ user = [1, "Max"];
 user.push("Hello", 2);
 
 
-
+// ------------------------
 // EMUN type is no duplicate value, help to store the constant values
 // numeric enum, string enum, heterogenous enum
 
@@ -71,7 +76,9 @@ enum MultiRequest {
 // console.log(MultiRequest);
 
 
-//  any type is not recommended to use it, it will allow to assign any type of value
+// --------------------------------------------------
+//  any type is not recommended to use it, 
+// it will allow to assign any type of value
 
 let randomValue: any;
 randomValue = 10;
@@ -80,7 +87,8 @@ randomValue = "Max";
 randomValue = [];
 
 
-// object type 
+// -----------------------------
+// object type
 let getData: object[]; //array of object type declared
 getData = [] // empty array of object type assigned
 
@@ -96,13 +104,13 @@ getData.push(userDetails, employee)
 // console.log(getData);
 
 
-
+// -----------------------------
 // custom type
 
-let users: object[]; //array of object type declared
-users = [] // empty array of object type assigned
-
 type userType = { id: number, name: string, isStatus?: boolean }; // custom type created
+
+let users: userType[]; //array of object type declared
+users = [] // empty array of object type assigned
 
 let user1: userType;
 user1 = { id: 1, name: "Max" }
@@ -111,5 +119,42 @@ users.push(user1);
 let user2: userType = { id: 2, name: "Anna", isStatus: true };
 users.push(user2);
 // console.log(users);
+
+type RequestMethod = "GET" | "POST" | "PUT" | "DELETE"; // custom type with union type
+let requestMethod: RequestMethod;
+requestMethod = "GET";
+// requestMethod = "PATCH"; // it will throw error
+
+function sendRequest(method: RequestMethod) {
+    if (method === "PUT") {
+        console.log("Creating new record");
+    } else {
+        console.log(`Request method is not matching`);
+    }
+}
+// sendRequest('PUT');
+
+
+// -----------------------------
+// classes, constructor and access modifiers
+
+class Person {
+    // property, constructor and method
+
+    userName: string; // by default public
+    userAge: number;
+
+    constructor(name: string, age: number) {
+        this.userName = name;
+        this.userAge = age;
+    }
+    display() {
+        console.log(`name is ${this.userName}, age is ${this.userAge}`);
+
+    }
+}
+let getPersonData = new Person("Ranajit", 30)
+// getPersonData.display()
+
 
 
