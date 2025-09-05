@@ -24,10 +24,12 @@ TypeScript is a **strongly typed superset of JavaScript** that compiles into pla
 
 ---
 
-## 📜 Major Syntax & Features
+## Major Syntax & Features
 
-### 1. Basic Types
+
 ```ts
+### 1. Basic Types
+
 let username: string = "John";
 let age: number = 25;
 let isActive: boolean = true;
@@ -81,9 +83,4 @@ let str = identity<string>("Hello");
     - (Initialize Config) npm init -y
     - (Compile file and watch) tsc index.ts --watch
     - (Run code) nodemon index.js
-
-
-
-
-
 
