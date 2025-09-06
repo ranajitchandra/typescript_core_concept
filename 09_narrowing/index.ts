@@ -21,3 +21,13 @@ function printLength(obj: string | string[] | null) {
   }
 }
 
+printLength("hello");
+printLength(["a", "b", "c"]);
+printLength(null);
+
+let firstName : string;
+let lastName : typeof firstName; // type of firstName is string
+lastName = "Manikanta"; // valid
+// lastName = 123; // invalid, because lastName is string type
+console.log(lastName);
+

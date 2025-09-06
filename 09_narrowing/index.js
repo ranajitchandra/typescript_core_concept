@@ -20,3 +20,11 @@ function printLength(obj) {
         console.log("String length is ".concat(obj === null || obj === void 0 ? void 0 : obj.length));
     }
 }
+printLength("hello");
+printLength(["a", "b", "c"]);
+printLength(null);
+var firstName;
+var lastName; // type of firstName is string
+lastName = "Manikanta"; // valid
+// lastName = 123; // invalid, because lastName is string type
+console.log(lastName);
